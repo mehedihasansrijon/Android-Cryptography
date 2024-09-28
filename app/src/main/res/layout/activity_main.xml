@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        app:title="@string/app_name" />
+
+    <EditText
+        android:id="@+id/userInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBar"
+        android:layout_margin="8dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter your massage"
+        android:inputType="textMultiLine"
+        android:maxHeight="150dp"
+        android:minHeight="48dp"
+        android:overScrollMode="always"
+        android:padding="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="@color/black"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/encodeDecodeLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userInputEditText"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/encodeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orange"
+            android:text="Encode"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/decodeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:text="Decode"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resultCardView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/encodeDecodeLay"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="25dp">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:textIsSelectable="true"
+            android:textSize="16dp" />
+        <!--            android:overScrollMode="always"-->
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/copyPasteLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultCardView"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/pasteResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultCardView"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:text="Paste Result"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/copyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resultCardView"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orange"
+            android:text="Copy Result Text"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
